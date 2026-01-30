@@ -33,3 +33,8 @@ If you have Python installed, you can easily start a local server:
 - **Node.js**: `npx serve`
 - **VS Code**: Use the "Live Server" extension.
 
+## TODO
+
+- [ ] Add support for drag and drop
+- [ ] Add support for loading JSON files
+- [ ] Responsive design 
