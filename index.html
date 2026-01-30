@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to Markdown Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>JSON > MD</h1>
+            </div>
+            <div class="marquee-container">
+                <p class="marquee">WELCOME TO THE JSON TO MARKDOWN CONVERTER /// INPUT JSON ON THE LEFT /// GET MARKDOWN
+                    ON THE RIGHT /// <span class="btn-static">DL JSON</span>: DOWNLOAD SOURCE /// <span
+                        class="btn-static">DL MD</span>: SAVE MARKDOWN /// <span class="btn-static">DEMOTE
+                        HEADERS</span>: SHIFT HEADERS DEEPER /// <span class="btn-static">ADD TOC</span>: GENERATE TABLE
+                    OF CONTENTS /// <span class="btn-static">HEADER OVERRIDE</span>: RENAME DOCUMENT /// WELCOME TO THE
+                    JSON TO MARKDOWN CONVERTER /// INPUT JSON ON THE LEFT /// GET MARKDOWN ON THE RIGHT /// <span
+                        class="btn-static">DL JSON</span>: DOWNLOAD SOURCE /// <span class="btn-static">DL MD</span>:
+                    SAVE MARKDOWN /// <span class="btn-static">DEMOTE HEADERS</span>: SHIFT HEADERS DEEPER /// <span
+                        class="btn-static">ADD TOC</span>: GENERATE TABLE OF CONTENTS /// <span
+                        class="btn-static">HEADER OVERRIDE</span>: RENAME DOCUMENT /// </p>
+            </div>
+            <div class="header-right">
+                <a href="https://h4ck1ng.science" target="_blank" class="cyber-link">h4ck1ng.science</a>
+            </div>
+        </header>
+        <main>
+            <section class="panel left-panel">
+                <div class="toolbar">
+                    <input type="text" id="filename-input" placeholder="Filename..." autocomplete="off"
+                        data-tooltip="Set output filename">
+                    <button id="load-example" class="btn" data-tooltip="Load Sample JSON">Load Example</button>
+                    <button id="download-json" class="btn" data-tooltip="Download Source JSON">DL JSON</button>
+                </div>
+                <textarea id="json-input" placeholder="{ 'Type': 'JSON Here' }"></textarea>
+            </section>
+            <section class="panel right-panel">
+                <div class="toolbar">
+                    <input type="text" id="title-override" placeholder="Header Override..." autocomplete="off"
+                        data-tooltip="Rename document title">
+                    <button id="add-toc" class="btn" data-tooltip="Generate Table of Contents">Add TOC</button>
+                    <button id="demote-headers" class="btn" data-tooltip="Increase Header Levels">Demote Headers:
+                        OFF</button>
+                    <button id="download-md" class="btn" data-tooltip="Download Markdown File">DL MD</button>
+                </div>
+                <div id="markdown-output" class="output-area"></div>
+            </section>
+        </main>
+        <footer>
+            An experiment by h4ck1ng.science. This application is running on the browser. /// <span
+                id="footer-date"></span>
+            <button id="easter-egg" class="easter-egg-btn" title="Summon JSON-Chan">( ^..^ )</button>
+        </footer>
+    </div>
+    <div id="ascii-assistant" class="ascii-assistant" style="display: none;">
+        <div class="ascii-container">
+            <pre class="ascii-art">
+      |\      _,,,---,,_
+ZZZzz /,`.-'`'    -.  ;-;;,_
+     |,4-  ) )-,_. ,\ (  `'-'
+    '---''(_/--'  `-'\_)
+            </pre>
+            <div class="ascii-bubble">
+                <h2>HELLO HUMAN!</h2>
+                <p>I AM <strong>JSON-CHAN</strong>, YOUR CONVERSION COMPANION.</p>
+                <hr>
+                <p>1. PASTE YOUR UGLY JSON ON THE LEFT.</p>
+                <p>2. I WILL MAKE IT BEAUTIFUL MARKDOWN ON THE RIGHT.</p>
+                <p>3. USE THE BUTTONS TO DOWNLOAD!</p>
+                <button id="dismiss-assistant">[ I UNDERSTAND, THANK YOU ]</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
