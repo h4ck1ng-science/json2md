@@ -60,9 +60,11 @@ if (toggleJsonBtn && toggleMarkdownBtn && leftPanel && rightPanel) {
         toggleJsonBtn.classList.add('active');
         toggleJsonBtn.setAttribute('aria-pressed', 'true');
         toggleJsonBtn.setAttribute('data-tooltip', 'Currently viewing JSON Panel');
+        toggleJsonBtn.setAttribute('aria-label', 'JSON INPUT - Currently viewing JSON Panel');
         toggleMarkdownBtn.classList.remove('active');
         toggleMarkdownBtn.setAttribute('aria-pressed', 'false');
         toggleMarkdownBtn.setAttribute('data-tooltip', 'Show Markdown Panel');
+        toggleMarkdownBtn.setAttribute('aria-label', 'MARKDOWN OUTPUT - Show Markdown Panel');
     });
     
     toggleMarkdownBtn.addEventListener('click', () => {
@@ -74,9 +76,11 @@ if (toggleJsonBtn && toggleMarkdownBtn && leftPanel && rightPanel) {
         toggleMarkdownBtn.classList.add('active');
         toggleMarkdownBtn.setAttribute('aria-pressed', 'true');
         toggleMarkdownBtn.setAttribute('data-tooltip', 'Currently viewing Markdown Panel');
+        toggleMarkdownBtn.setAttribute('aria-label', 'MARKDOWN OUTPUT - Currently viewing Markdown Panel');
         toggleJsonBtn.classList.remove('active');
         toggleJsonBtn.setAttribute('aria-pressed', 'false');
         toggleJsonBtn.setAttribute('data-tooltip', 'Show JSON Panel');
+        toggleJsonBtn.setAttribute('aria-label', 'JSON INPUT - Show JSON Panel');
     });
 }
 
