@@ -8,6 +8,10 @@ const downloadMdBtn = document.getElementById('download-md');
 const addTocBtn = document.getElementById('add-toc');
 const loadExampleBtn = document.getElementById('load-example');
 const footerDate = document.getElementById('footer-date');
+const toggleJsonBtn = document.getElementById('toggle-json');
+const toggleMarkdownBtn = document.getElementById('toggle-markdown');
+const leftPanel = document.querySelector('.left-panel');
+const rightPanel = document.querySelector('.right-panel');
 
 const CAT_EXAMPLE = {
     "Title": "The Cyber-Cat manual",
@@ -39,6 +43,45 @@ const CAT_EXAMPLE = {
 // Set Footer Date
 if (footerDate) {
     footerDate.innerText = new Date().toLocaleDateString();
+}
+
+// Mobile Panel Toggle Logic
+if (toggleJsonBtn && toggleMarkdownBtn && leftPanel && rightPanel) {
+    // Set initial state: JSON panel active on mobile
+    leftPanel.classList.add('active');
+    toggleJsonBtn.classList.add('active');
+    
+    toggleJsonBtn.addEventListener('click', () => {
+        // Activate JSON panel
+        leftPanel.classList.add('active');
+        rightPanel.classList.remove('active');
+        
+        // Update button states
+        toggleJsonBtn.classList.add('active');
+        toggleJsonBtn.setAttribute('aria-pressed', 'true');
+        toggleJsonBtn.setAttribute('data-tooltip', 'Currently viewing JSON Panel');
+        toggleJsonBtn.setAttribute('aria-label', 'JSON INPUT - Currently viewing JSON Panel');
+        toggleMarkdownBtn.classList.remove('active');
+        toggleMarkdownBtn.setAttribute('aria-pressed', 'false');
+        toggleMarkdownBtn.setAttribute('data-tooltip', 'Show Markdown Panel');
+        toggleMarkdownBtn.setAttribute('aria-label', 'MARKDOWN OUTPUT - Show Markdown Panel');
+    });
+    
+    toggleMarkdownBtn.addEventListener('click', () => {
+        // Activate Markdown panel
+        rightPanel.classList.add('active');
+        leftPanel.classList.remove('active');
+        
+        // Update button states
+        toggleMarkdownBtn.classList.add('active');
+        toggleMarkdownBtn.setAttribute('aria-pressed', 'true');
+        toggleMarkdownBtn.setAttribute('data-tooltip', 'Currently viewing Markdown Panel');
+        toggleMarkdownBtn.setAttribute('aria-label', 'MARKDOWN OUTPUT - Currently viewing Markdown Panel');
+        toggleJsonBtn.classList.remove('active');
+        toggleJsonBtn.setAttribute('aria-pressed', 'false');
+        toggleJsonBtn.setAttribute('data-tooltip', 'Show JSON Panel');
+        toggleJsonBtn.setAttribute('aria-label', 'JSON INPUT - Show JSON Panel');
+    });
 }
 
 // ASCII Assistant Logic
