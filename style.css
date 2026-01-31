@@ -444,9 +444,9 @@ body::before {
     cursor: pointer;
     text-transform: uppercase;
     transition: all 0.2s;
-    flex: 1;
-    max-width: 200px;
+    flex: 1 1 0; /* Equal width for both buttons */
     min-height: 44px; /* Minimum touch target size */
+    max-width: 50%; /* Ensure equal sizing */
 }
 
 .mobile-toggle-btn:hover {
@@ -465,19 +465,19 @@ body::before {
     transform: translateY(1px);
 }
 
-/* Mobile Responsive Layout */
-@media screen and (max-width: 767px) {
-    /* Show mobile toggle buttons */
+/* Mobile and Tablet Responsive Layout */
+@media screen and (max-width: 1023px) {
+    /* Show toggle buttons on mobile and tablet */
     .mobile-toggle-container {
         display: flex;
     }
 
-    /* Stack panels vertically on mobile */
+    /* Stack panels vertically on mobile and tablet */
     main {
         flex-direction: column;
     }
 
-    /* Hide panels by default on mobile */
+    /* Hide panels by default on mobile and tablet */
     .panel {
         display: none;
         border-right: none;
