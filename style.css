@@ -422,3 +422,109 @@ body::before {
     text-shadow: 0 0 5px var(--text-color);
     transform: scale(1.1) rotate(10deg);
 }
+
+/* Mobile Toggle Buttons */
+.mobile-toggle-container {
+    display: none; /* Hidden by default on desktop */
+    background: #000;
+    border-bottom: 2px solid var(--text-color);
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-toggle-btn {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    padding: 10px 20px;
+    font-family: var(--font-stack);
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    flex: 1;
+    max-width: 200px;
+    min-height: 44px; /* Minimum touch target size */
+}
+
+.mobile-toggle-btn:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+.mobile-toggle-btn.active {
+    background: var(--text-color);
+    color: #000;
+    border: 2px solid var(--text-color);
+    box-shadow: 0 0 10px var(--text-color);
+}
+
+.mobile-toggle-btn:active {
+    transform: translateY(1px);
+}
+
+/* Mobile Responsive Layout */
+@media screen and (max-width: 767px) {
+    /* Show mobile toggle buttons */
+    .mobile-toggle-container {
+        display: flex;
+    }
+
+    /* Stack panels vertically on mobile */
+    main {
+        flex-direction: column;
+    }
+
+    /* Hide panels by default on mobile */
+    .panel {
+        display: none;
+        border-right: none;
+        border-bottom: 1px dashed var(--accent-color);
+    }
+
+    /* Show active panel */
+    .panel.active {
+        display: flex;
+    }
+
+    /* Ensure last panel doesn't have bottom border */
+    .panel:last-child {
+        border-bottom: none;
+    }
+
+    /* Adjust header for mobile */
+    header {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 60px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .marquee-container {
+        order: 3;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    /* Adjust toolbar for mobile */
+    .toolbar {
+        flex-wrap: wrap;
+    }
+
+    #filename-input,
+    #title-override {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    /* Adjust footer for mobile */
+    footer {
+        flex-wrap: wrap;
+        font-size: 0.8rem;
+    }
+}
