@@ -49,6 +49,7 @@ if (footerDate) {
 if (toggleJsonBtn && toggleMarkdownBtn && leftPanel && rightPanel) {
     // Set initial state: JSON panel active on mobile
     leftPanel.classList.add('active');
+    toggleJsonBtn.classList.add('active');
     
     toggleJsonBtn.addEventListener('click', () => {
         // Activate JSON panel
@@ -57,7 +58,9 @@ if (toggleJsonBtn && toggleMarkdownBtn && leftPanel && rightPanel) {
         
         // Update button states
         toggleJsonBtn.classList.add('active');
+        toggleJsonBtn.setAttribute('aria-pressed', 'true');
         toggleMarkdownBtn.classList.remove('active');
+        toggleMarkdownBtn.setAttribute('aria-pressed', 'false');
     });
     
     toggleMarkdownBtn.addEventListener('click', () => {
@@ -67,7 +70,9 @@ if (toggleJsonBtn && toggleMarkdownBtn && leftPanel && rightPanel) {
         
         // Update button states
         toggleMarkdownBtn.classList.add('active');
+        toggleMarkdownBtn.setAttribute('aria-pressed', 'true');
         toggleJsonBtn.classList.remove('active');
+        toggleJsonBtn.setAttribute('aria-pressed', 'false');
     });
 }
 
