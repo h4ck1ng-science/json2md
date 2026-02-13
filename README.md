@@ -2,6 +2,9 @@
 
 A single-page static web application that converts JSON objects into Markdown formatted text.
 
+![JSON to Markdown Converter Demo](json2md.gif)
+
+
 ## Features
 - **Vintage "Hacker" Aesthetic**: Dark mode, neon green text, and scanlines.
 - **Two-Column Layout**: JSON input on the left, real-time Markdown output on the right.
